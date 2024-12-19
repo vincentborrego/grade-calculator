@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Grade Calculator</h1>
+            <p>Would you like to calculate an assignment grade or a class grade?</p>
+            <button onclick="setChoice('assignment')">Assignment Grade</button>
+            <button onclick="setChoice('class')">Class Grade</button>
+        </div>
+
+        <div id="assignment-form" style="display:none;">
+            <h2>Assignment Grade</h2>
+            <label for="points-received">Points Received:</label>
+            <input type="number" id="points-received" placeholder="e.g., 9">
+            <label for="total-points">Total Points:</label>
+            <input type="number" id="total-points" placeholder="e.g., 13">
+            <button onclick="calculateAssignmentGrade()">Calculate</button>
+            <h2 id="assignment-result"></h2>
+        </div>
+
+        <div id="class-form" style="display:none;">
+            <h2>Class Grade</h2>
+            <label for="formatives-count">Number of Formatives:</label>
+            <input type="number" id="formatives-count" placeholder="e.g., 7">
+            <label for="summatives-count">Number of Summatives:</label>
+            <input type="number" id="summatives-count" placeholder="e.g., 1">
+            <label for="formatives-total">Total Formative Score:</label>
+            <input type="number" id="formatives-total" placeholder="e.g., 535">
+            <label for="summatives-total">Total Summative Score:</label>
+            <input type="number" id="summatives-total" placeholder="e.g., 90">
+            <button onclick="calculateClassGrade()">Calculate</button>
+            <h2 id="class-result"></h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
